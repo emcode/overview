@@ -1,0 +1,16 @@
+{
+    "name": "simplercode/overview",
+    "description": "Minimalistic View Layer",
+    "authors": [
+        {
+            "name": "emcode",
+            "email": "michal@simplercode.com"
+        }
+    ],
+    "autoload": {
+      "psr-0": {
+        "Simplercode\\Overview": "lib"
+      }
+    },
+    "require": {}
+}
