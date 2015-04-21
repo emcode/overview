@@ -1,6 +1,6 @@
 {
     "name": "simplercode/overview",
-    "description": "Minimalistic View Layer",
+    "description": "Minimalistic view layer for PHP applications",
     "authors": [
         {
             "name": "emcode",
@@ -12,5 +12,9 @@
         "Simplercode\\Overview": "lib"
       }
     },
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phpunit/phpcov": "~2.0",
+        "satooshi/php-coveralls": "dev-master"
+    }
 }
