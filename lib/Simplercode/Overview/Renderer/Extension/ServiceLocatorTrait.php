@@ -1,6 +1,6 @@
 <?php
 
-namespace Simplercode\Overview\Renderer;
+namespace Simplercode\Overview\Renderer\Extension;
 
 trait ServiceLocatorTrait
 {
