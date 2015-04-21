@@ -33,7 +33,7 @@ trait LayoutTrait
         }
 
         $actionModel = $this->prepareActionModelFromActionResult($actionResult);
-        $this->layoutModel->addChildren($this->actionModelName, $actionModel);
+        $this->layoutModel->addChild($this->actionModelName, $actionModel);
         $content = $this->render($this->layoutModel);
         return $content;
     }
