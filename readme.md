@@ -1,6 +1,11 @@
 # overview
 Minimalistic view layer for PHP applications
 
+[![Build Status](https://travis-ci.org/emcode/overview.svg)]
+(https://travis-ci.org/emcode/overview)
+[![Coverage Status](https://coveralls.io/repos/emcode/overview/badge.svg?branch=master&service=github)]
+(https://coveralls.io/github/emcode/overview?branch=master)
+
 # why
 Overview library is insipired by ZF2 Zend\View component. I was working on many ZF2 projects for some time and I liked ViewModel abstraction that is provided by Zend\View component. View model describes data and template name for given part of UI. View model can be rendered than by different types of renders. Models can be nested, which is convinient when you want to have one layout that has multiple view models rendered inside: content, sidebar, footer and so on.
 
