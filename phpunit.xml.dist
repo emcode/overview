@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit 
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        stopOnFailure="false"
+        bootstrap="test/bootstrap.php"
+>
+
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory>test/Simplercode/Overview</directory>
+        </testsuite>
+    </testsuites>
+
+</phpunit>
