@@ -66,4 +66,20 @@ class PhpTemplateRendererTest extends PHPUnit_Framework_TestCase
         $model = new Model('some-template');
         $renderer->render($model);
     }
+
+    public function testItIsPossibleToFindOutIfTemplateIsRegistered()
+    {
+        $map = array(
+            'first/template/alias' => 'some/path/to/file',
+            'second/template/alias' => 'other/path/to/file',
+            'third/template/example' => null // null value is the same as non registered
+        );
+
+        $renderer = new PhpTemplateRenderer($map);
+
+        $this->assertTrue($renderer->isTemplateRegistered('second/template/alias'));
+        $this->assertTrue($renderer->isTemplateRegistered('first/template/alias'));
+        $this->assertFalse($renderer->isTemplateRegistered('third/template/example'));
+        $this->assertFalse($renderer->isTemplateRegistered('some/non/registered/template'));
+    }
 }

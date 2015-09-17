@@ -147,4 +147,13 @@ class PhpTemplateRenderer
     {
         return !empty($this->templateMap);
     }
+
+    /**
+     * @param $templateName
+     * @return bool
+     */
+    public function isTemplateRegistered($templateName)
+    {
+        return isset($this->templateMap[$templateName]);
+    }
 }
