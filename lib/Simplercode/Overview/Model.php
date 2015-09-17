@@ -83,6 +83,27 @@ class Model
     }
 
     /**
+     * @param $name string
+     * @param $value mixed
+     * @return $this
+     */
+    public function setVariable($name, $value)
+    {
+        $this->variables[$name] = $value;
+        return $this;
+    }
+
+    /**
+     * @param $name string
+     * @return $this
+     */
+    public function unsetVariable($name)
+    {
+        unset($this->variables[$name]);
+        return $this;
+    }
+
+    /**
      * @return bool
      */
     public function hasAnyVariables()
@@ -106,6 +127,17 @@ class Model
         return $this;
     }
 
+    /**
+     * @param $name
+     * @param Model $childModel
+     * @return $this
+     */
+    public function setChild($name, Model $childModel)
+    {
+        $this->children[$name] = $childModel;
+        return $this;
+    }
+    
     /**
      * @return Model[]
      */

@@ -24,7 +24,7 @@ class ModelTest extends PHPUnit_Framework_TestCase
 
         $model = new Model(null, $variables);
         $this->assertTrue($model->hasAnyVariables());
-        $this->assertEquals($model->getVariables(), $variables);
+        $this->assertEquals($variables, $model->getVariables());
     }
 
     /**
@@ -35,6 +35,15 @@ class ModelTest extends PHPUnit_Framework_TestCase
         $parent = new Model();
         $parent->addChild('exampleChild', new Model());
         $parent->addChild('exampleChild',  new Model());
+    }
+
+    public function testChildModelCanReplacedByNewOne()
+    {
+        $parent = new Model();
+        $parent->addChild('exampleChild', new Model('firstTemplate'));
+        $parent->setChild('exampleChild',  new Model('secondTemplate'));
+        $child = $parent->getChildByName('exampleChild');
+        $this->assertEquals('secondTemplate', $child->getTemplate());
     }
 
     public function testCanAddChildModelToParent()
@@ -55,5 +64,20 @@ class ModelTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue($parent->hasAnyChildren());
         $this->assertEquals($parent->getChildren(), $children);
+    }
+
+    public function testSingleVariableCanBeSetByName()
+    {
+        $model = new Model();
+        $model->setVariable('variableName', 'abcde');
+        $this->assertEquals(array('variableName' => 'abcde'), $model->getVariables());
+    }
+
+    public function testSingleVariableCanBeUnsetByName()
+    {
+        $model = new Model();
+        $model->setVariables(array('en' => 'hello', 'es' => 'ola', 'fr' => 'bonjour'));
+        $model->unsetVariable('es');
+        $this->assertEquals(array('en' => 'hello', 'fr' => 'bonjour'), $model->getVariables());
     }
 }
